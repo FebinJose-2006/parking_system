@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Parking Lots</h2>
+
+<div class="row">
+    {% for lot in lots %}
+
+    <div class="col-md-4 mb-4">
+        <div class="card p-3 shadow-sm">
+            <h4>{{ lot.name }}</h4>
+            <p>{{ lot.location }}</p>
+
+            <a href="{% url 'slot_list' lot.id %}" class="btn btn-primary">
+                View Slots
+            </a>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
